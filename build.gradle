@@ -1,0 +1,8 @@
+// P0 keeps the upstream plugin ID and DSL until runtime compatibility is proven.
+plugins {
+    id 'base'
+}
+
+tasks.named('build') {
+    dependsOn(':baseline:build', ':mixin-bootstrap:build', ':mixin-probe:build', ':mixin-mapping-probe:build')
+}

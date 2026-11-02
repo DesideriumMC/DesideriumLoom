@@ -1,0 +1,59 @@
+plugins { id 'agency.highlysuspect.voldeloom' }
+group = 'dev.desiderium.samples'
+version = '0.1.0-l1'
+java.toolchain.languageVersion = JavaLanguageVersion.of(11)
+tasks.withType(JavaCompile).configureEach { options.release = 6 }
+def loaderDir = rootProject.file(providers.gradleProperty('desideriumLoaderDir').get())
+if (!new File(loaderDir, 'desideriumloader-1.6.4-9.11.1.1345-L1.jar').isFile()) {
+    throw new GradleException("Build Loader L1 first: $loaderDir")
+}
+repositories {
+    flatDir { dirs loaderDir }
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/'; content { includeGroup 'org.spongepowered' } }
+}
+dependencies {
+    minecraft 'com.mojang:minecraft:1.6.4'
+    forge 'dev.desiderium:desideriumloader:1.6.4-9.11.1.1345-L1'
+    mappings 'net.minecraftforge:forge:1.6.4-9.11.1.1345:src@zip'
+    compileOnly 'org.spongepowered:mixin:0.8.7'
+    annotationProcessor 'org.spongepowered:mixin:0.8.7:processor'
+    runtimeOnly files(new File(loaderDir, 'desiderium-loader-mixin-0.8.7-0.1.0-l1.jar'))
+    runtimeOnly files(project(':baseline').layout.buildDirectory.file('libs/baseline-0.1.0-dev.jar'))
+}
+sourceSets.main {
+    java.srcDirs = [project(':mixin-probe').file('src/main/java'), project(':mixin-mapping-probe').file('src/main/java')]
+    resources.srcDirs = [project(':mixin-probe').file('src/main/resources'), project(':mixin-mapping-probe').file('src/main/resources')]
+}
+volde.mixin('main', 'mixins.desiderium.p2.refmap.json')
+volde.runs {
+    client {
+        runDir = 'run'
+        programArg '--username=DesideriumL1'
+        property 'desiderium.mixin.configs', 'mixins.desiderium.p1.json,mixins.desiderium.p2.json,mixins.desiderium.p1.json'
+    }
+    server {
+        runDir = 'run-server'
+        property 'desiderium.mixin.configs', 'mixins.desiderium.p1.json,mixins.desiderium.p2.json,mixins.desiderium.p1.json'
+    }
+}
+tasks.named('jar') {
+    manifest.attributes('DesideriumMixinConfigs': 'mixins.desiderium.p1.json,mixins.desiderium.p2.json')
+}
+tasks.named('compileJava') { dependsOn ':mixin-mapping-probe:verifyP2Inputs' }
+// JavaExec's --debug-jvm provides a suspended JDWP session on localhost:5005.
+tasks.register('exportLoaderLaunches') {
+    dependsOn tasks.named('build'), ':baseline:jar'
+    doLast {
+        ['Client', 'Server'].each { side ->
+            def run = tasks.named("run$side").get()
+            def output = layout.buildDirectory.file("l1-${side.toLowerCase()}-launch.json").get().asFile
+            output.parentFile.mkdirs()
+            output.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson([
+                side: side, directory: run.workingDir.absolutePath,
+                executable: run.javaLauncher.get().executablePath.asFile.absolutePath,
+                classpath: run.classpath.asPath, mainClass: run.mainClass.get(),
+                jvmArgs: run.jvmArgs, args: run.args]))
+        }
+    }
+}
+tasks.matching { it.name in ['runClient', 'runServer'] }.configureEach { dependsOn ':baseline:jar' }

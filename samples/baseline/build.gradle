@@ -1,0 +1,32 @@
+plugins {
+    id 'agency.highlysuspect.voldeloom'
+}
+
+group = 'dev.desiderium.samples'
+version = '0.1.0'
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(11)
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 6
+    options.encoding = 'UTF-8'
+}
+
+volde {
+    runs {
+        client {
+            programArg '--username=DesideriumDev'
+        }
+        server {
+            runDir = 'run-server'
+        }
+    }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.6.4'
+    forge 'net.minecraftforge:forge:1.6.4-9.11.1.1345:universal'
+    mappings 'net.minecraftforge:forge:1.6.4-9.11.1.1345:src@zip'
+}

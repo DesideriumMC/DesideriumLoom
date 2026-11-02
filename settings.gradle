@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        maven { url = 'https://maven.fabricmc.net/' }
+        gradlePluginPortal()
+        mavenCentral()
+    }
+    includeBuild('plugin')
+}
+
+rootProject.name = 'DesideriumLoom'
+include('baseline')
+project(':baseline').projectDir = file('samples/baseline')
+include('mixin-bootstrap', 'mixin-probe')
+project(':mixin-bootstrap').projectDir = file('runtime/mixin-bootstrap')
+project(':mixin-probe').projectDir = file('samples/mixin-probe')
+include('mixin-mapping-probe')
+project(':mixin-mapping-probe').projectDir = file('samples/mixin-mapping-probe')
+include('loader-mixin-runtime')
+project(':loader-mixin-runtime').projectDir = file('../DesideriumLoader/runtime/mixin')
+if (providers.gradleProperty('desideriumLoaderDir').isPresent()) {
+    include('loader-probe')
+    project(':loader-probe').projectDir = file('samples/loader-probe')
+}

@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "target": "@env(DEFAULT)",
+  "package": "dev.desiderium.probe.mixin",
+  "compatibilityLevel": "JAVA_6",
+  "mixins": ["CommonProbe"],
+  "client": ["ClientProbe"],
+  "injectors": { "defaultRequire": 1 }
+}

@@ -1,0 +1,33 @@
+// Local release identity; legacy included-build users retain their existing ID/version.
+beforeProject { p ->
+    if (p.name == 'voldeloom') {
+        p.group = 'dev.desiderium'
+        p.version = p.findProperty('desideriumReleaseVersion') ?: '0.1.0-rc2'
+        p.tasks.withType(AbstractArchiveTask).configureEach {
+            preserveFileTimestamps = false
+            reproducibleFileOrder = true
+            fileMode = 0644
+            dirMode = 0755
+        }
+        p.tasks.withType(Jar).configureEach {
+            from p.file('LICENSE')
+            from p.file('UPSTREAM.md')
+        }
+        p.afterEvaluate {
+            p.publishing.repositories.maven {
+                name = 'L5'
+                url = p.uri(p.property('desideriumReleaseDir'))
+            }
+            p.publishing.publications.withType(MavenPublication).configureEach { publication ->
+              if (publication.name == 'pluginMaven') {
+                artifact p.tasks.named('sourcesJar')
+                pom {
+                    name = 'Desiderium Loom'
+                    description = 'Minecraft 1.6.4 / Forge .1345 development tools; derived from Voldeloom.'
+                    licenses { license { name = 'MIT'; url = 'https://opensource.org/license/mit/' } }
+                }
+              }
+            }
+        }
+    }
+}

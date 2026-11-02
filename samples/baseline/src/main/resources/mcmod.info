@@ -1,0 +1,10 @@
+[
+  {
+    "modid": "desideriumbaseline",
+    "name": "DesideriumLoom P0 Baseline",
+    "description": "Ordinary Forge 1.6.4 mod for P0 build and runtime verification.",
+    "version": "0.1.0",
+    "mcversion": "1.6.4",
+    "authorList": ["Desiderium contributors"]
+  }
+]

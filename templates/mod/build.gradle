@@ -1,0 +1,28 @@
+plugins { id 'dev.desiderium.loom' }
+group = 'example'
+version = '1.0.0'
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+tasks.withType(JavaCompile).configureEach { options.release = 8 }
+def loaderJar = file(providers.gradleProperty('loaderJar').get())
+def loaderMixinJar = file(providers.gradleProperty('loaderMixinJar').get())
+if (!loaderJar.isFile() || !loaderMixinJar.isFile()) throw new GradleException('Set loaderJar and loaderMixinJar to built Loader artifacts; see README.md')
+repositories {
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/'; content { includeGroup 'org.spongepowered' } }
+}
+dependencies {
+    minecraft 'com.mojang:minecraft:1.6.4'
+    forge files(loaderJar)
+    mappings 'net.minecraftforge:forge:1.6.4-9.11.1.1345:src@zip'
+    compileOnly 'org.spongepowered:mixin:0.8.7'
+    annotationProcessor 'org.spongepowered:mixin:0.8.7:processor'
+    runtimeOnly files(loaderMixinJar)
+}
+desiderium {
+    mixin 'main', 'mixins.example.refmap.json'
+    mixinConfig 'mixins.example.json'
+    runs {
+        client { programArg '--username=Developer'; runDir = 'run-client' }
+        server { runDir = 'run-server' }
+    }
+}
+publishing.repositories.maven { name = 'test'; url = layout.buildDirectory.dir('test-repository') }

@@ -1,0 +1,62 @@
+plugins {
+    id 'java-library'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'dev.desiderium'
+version = '0.1.0-p1'
+def mixinVersion = providers.gradleProperty('mixinVersion').getOrElse('0.8.7')
+if (!(mixinVersion in ['0.8.5', '0.8.7'])) throw new GradleException('P1 only evaluates Mixin 0.8.5 and 0.8.7')
+
+repositories {
+    maven { url = 'https://repo.spongepowered.org/repository/maven-public/'; content { includeGroup 'org.spongepowered' } }
+    maven { url = 'https://libraries.minecraft.net/'; content { includeGroup 'net.minecraft' } }
+    mavenCentral()
+}
+java.toolchain.languageVersion = JavaLanguageVersion.of(11)
+tasks.withType(JavaCompile).configureEach {
+    options.release = 6
+    options.compilerArgs += ['-proc:none']
+}
+dependencies {
+    implementation "org.spongepowered:mixin:${mixinVersion}"
+    implementation 'org.ow2.asm:asm:9.7.1'
+    implementation 'org.ow2.asm:asm-tree:9.7.1'
+    implementation 'org.ow2.asm:asm-commons:9.7.1'
+    implementation 'org.ow2.asm:asm-util:9.7.1'
+    implementation 'com.google.guava:guava:21.0'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'org.apache.logging.log4j:log4j-api:2.24.3'
+    implementation 'org.apache.logging.log4j:log4j-core:2.24.3'
+    compileOnly 'net.minecraft:launchwrapper:1.8'
+}
+tasks.named('shadowJar') {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveClassifier = ''
+    archiveBaseName = "desiderium-mixin-bootstrap-${mixinVersion}"
+    relocate 'org.objectweb.asm', 'dev.desiderium.internal.asm'
+    relocate 'com.google.common', 'dev.desiderium.internal.guava'
+    relocate 'com.google.gson', 'dev.desiderium.internal.gson'
+    relocate 'org.apache.logging.log4j', 'dev.desiderium.internal.log4j'
+    mergeServiceFiles()
+    transform(com.github.jengelman.gradle.plugins.shadow.transformers.Log4j2PluginsCacheFileTransformer)
+    exclude 'META-INF/*.SF', 'META-INF/*.RSA', 'META-INF/*.DSA', 'module-info.class', 'META-INF/versions/**'
+    manifest.attributes('TweakClass': 'dev.desiderium.bootstrap.DesideriumTweaker',
+        'TweakOrder': '1000', 'Implementation-Version': "${project.version}+mixin.${mixinVersion}")
+}
+tasks.named('jar') { archiveClassifier = 'thin' }
+tasks.named('assemble') { dependsOn tasks.named('shadowJar') }
+
+tasks.register('verifyP1Inputs') {
+    doLast {
+        def lock = new groovy.json.JsonSlurper().parse(rootProject.file('gradle/p1-inputs.lock.json'))
+        configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts.each { artifact ->
+            def id = "${artifact.moduleVersion.id.group}:${artifact.name}:${artifact.moduleVersion.id.version}"
+            def pinned = lock.runtime.find { it.coordinate == id }
+            if (pinned == null) throw new GradleException("Unpinned P1 runtime artifact: $id")
+            def sha = java.security.MessageDigest.getInstance('SHA-256').digest(artifact.file.bytes).encodeHex().toString()
+            if (sha != pinned.sha256) throw new GradleException("P1 checksum mismatch: $id")
+        }
+    }
+}
+tasks.named('shadowJar') { dependsOn tasks.named('verifyP1Inputs') }

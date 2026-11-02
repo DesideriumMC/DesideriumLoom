@@ -1,0 +1,26 @@
+.gradle/
+.work/
+**/build/
+**/run/
+**/run-server/
+.idea/
+*.iml
+
+# Local working files and internal documentation
+.internal/
+.work/
+.gradle/
+**/build/
+**/run/
+**/run-client/
+**/run-server/
+**/__pycache__/
+.idea/
+*.iml
+*.log
+.env
+.env.*
+!.env.example
+/docs/
+/DEVELOPMENT_PLAN*.md
+/research/

@@ -1,0 +1,9 @@
+// Deliberate failure fixture. Use only with :mixin-mapping-probe:remapJarForRelease.
+gradle.projectsEvaluated {
+    def probe = gradle.rootProject.findProject(':mixin-mapping-probe')
+    if (probe == null) return // Included plugin build has its own Gradle instance.
+    def conflict = new File(probe.buildDir, 'p2-conflict.srg')
+    conflict.parentFile.mkdirs()
+    conflict.text = 'FD: dev/desiderium/mappingprobe/mixin/StackProbe/itemID dev/desiderium/mappingprobe/mixin/StackProbe/wrong_field\n'
+    probe.tasks.named('remapJarForRelease') { mixinMappings.from(conflict) }
+}

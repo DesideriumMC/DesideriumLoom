@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-30",
+  "timezone": "Australia/Sydney",
+  "selectedMixin": "0.8.7",
+  "game": "Minecraft 1.6.4 / Forge 9.11.1.1345",
+  "java": "Temurin 8u492-b09",
+  "sourceSnapshot": "gradle/p1-sources.lock.json",
+  "note": "Local Windows constructor-injection gate only. Client world rendering observed by computer-use automation. Archive hashes are build-specific, not reproducibility guarantees.",
+  "matrix": [
+    {
+      "environment": "development-server",
+      "mixin": "0.8.7",
+      "result": "passed",
+      "fullLocalLog": "samples/mixin-probe/run-server/ForgeModLoader-server-0.log",
+      "fullLogSha256": "f371afd012273cd3c47d2fe6d960ba96be9ae8daecbee659fdd31326e73951c9",
+      "evidence": "docs/evidence/p1/development-server-0.8.7.log",
+      "artifacts": [
+        {
+          "name": "runtime/mixin-bootstrap/build/libs/desiderium-mixin-bootstrap-0.8.7-0.1.0-p1.jar",
+          "sha256": "84ad80114d71bc181cb4e284fe9f7300e7bd7851ed362eb4582be7274e592ae4"
+        },
+        {
+          "name": "samples/mixin-probe/build/libs/mixin-probe-0.1.0-p1-dev.jar",
+          "sha256": "105dcf81f0516825e0ad1e9e6aff1403ec8dce0f397e204793e00802bef5584c"
+        },
+        {
+          "name": "samples/mixin-probe/build/libs/mixin-probe-0.1.0-p1.jar",
+          "sha256": "ad60f9aaf364d5ddcb434bd443cd71fe7721d609760f11dfb830d29353341351"
+        }
+      ]
+    },
+    {
+      "environment": "development-client",
+      "mixin": "0.8.7",
+      "result": "passed",
+      "fullLocalLog": "samples/mixin-probe/run/ForgeModLoader-client-0.log",
+      "fullLogSha256": "1b0a58cca9eb5513ea81df3de6b708416d6f446e1dd9baf8fce82e4a0f94acbc",
+      "evidence": "docs/evidence/p1/development-client-0.8.7.log",
+      "artifacts": [
+        {
+          "name": "runtime/mixin-bootstrap/build/libs/desiderium-mixin-bootstrap-0.8.7-0.1.0-p1.jar",
+          "sha256": "84ad80114d71bc181cb4e284fe9f7300e7bd7851ed362eb4582be7274e592ae4"
+        },
+        {
+          "name": "samples/mixin-probe/build/libs/mixin-probe-0.1.0-p1-dev.jar",
+          "sha256": "105dcf81f0516825e0ad1e9e6aff1403ec8dce0f397e204793e00802bef5584c"
+        },
+        {
+          "name": "samples/mixin-probe/build/libs/mixin-probe-0.1.0-p1.jar",
+          "sha256": "ad60f9aaf364d5ddcb434bd443cd71fe7721d609760f11dfb830d29353341351"
+        }
+      ]
+    },
+    {
+      "environment": "production-server",
+      "mixin": "0.8.7",
+      "result": "passed",
+      "fullLocalLog": ".work/p1/production-server-0.8.7/ForgeModLoader-server-0.log",
+      "fullLogSha256": "3e007eb8074b6d7261068dfc60ae2e28e1e569ed49324a819ef6a84098b55f20",
+      "evidence": "docs/evidence/p1/production-server-0.8.7.log",
+      "artifacts": [
+        {
+          "name": "minecraftforge-universal-1.6.4-9.11.1.1345.jar",
+          "sha256": "7acfb321c4b1fd35253b73dd2715f47cf3c38ee3ec4586d762c217114697df01"
+        },
+        {
+          "name": "minecraft_server.1.6.4.jar",
+          "sha256": "81841a2fedfe0ce19983156a06fa5294335284beeb95c8ca872d3c1a5fcf5774"
+        },
+        {
+          "name": "mods/desiderium-mixin-bootstrap-0.8.7-0.1.0-p1.jar",
+          "sha256": "2941fb3bd4ab5add4e7af39c62915c3950570ff5d9c6dc015dad81b0f904dc67"
+        },
+        {
+          "name": "mods/mixin-probe-0.1.0-p1.jar",
+          "sha256": "e4dc7c43e04363dab7a5e7fd18e4751c1ed1296b453d085b2c8c7646d1a7393c"
+        }
+      ]
+    },
+    {
+      "environment": "production-client",
+      "mixin": "0.8.7",
+      "result": "passed",
+      "fullLocalLog": ".work/p1/production-client-0.8.7/ForgeModLoader-client-0.log",
+      "fullLogSha256": "c11d82f6a7be713d7d44274c171ddc4ec1f4ef7111642af53ddab32682d57379",
+      "evidence": "docs/evidence/p1/production-client-0.8.7.log",
+      "artifacts": [
+        {
+          "name": "forge.jar",
+          "sha256": "7acfb321c4b1fd35253b73dd2715f47cf3c38ee3ec4586d762c217114697df01"
+        },
+        {
+          "name": "minecraft.jar",
+          "sha256": "f4513e51c766cdd1d32ca8acd0835d7e16e2851ebea3f2a3b4ce5ae696baf3ae"
+        },
+        {
+          "name": "mods/desiderium-mixin-bootstrap-0.8.7-0.1.0-p1.jar",
+          "sha256": "2941fb3bd4ab5add4e7af39c62915c3950570ff5d9c6dc015dad81b0f904dc67"
+        },
+        {
+          "name": "mods/mixin-probe-0.1.0-p1.jar",
+          "sha256": "e4dc7c43e04363dab7a5e7fd18e4751c1ed1296b453d085b2c8c7646d1a7393c"
+        }
+      ]
+    },
+    {
+      "environment": "comparison-production-server",
+      "mixin": "0.8.5",
+      "result": "passed",
+      "fullLocalLog": ".work/p1/production-server-0.8.5/ForgeModLoader-server-0.log",
+      "fullLogSha256": "193ca0345f416b2fe869b9945a6c1b3ee0820bff3720c0320b28843c77875339",
+      "evidence": "docs/evidence/p1/comparison-production-server-0.8.5.log",
+      "artifacts": [
+        {
+          "sha256": "7acfb321c4b1fd35253b73dd2715f47cf3c38ee3ec4586d762c217114697df01",
+          "name": "minecraftforge-universal-1.6.4-9.11.1.1345.jar"
+        },
+        {
+          "sha256": "81841a2fedfe0ce19983156a06fa5294335284beeb95c8ca872d3c1a5fcf5774",
+          "name": "minecraft_server.1.6.4.jar"
+        },
+        {
+          "sha256": "3a5b56f5b31c2d5d3944beddc879451cc790f64403a097d9130c8bf145d03275",
+          "name": "mods/desiderium-mixin-bootstrap-0.8.5-0.1.0-p1.jar"
+        },
+        {
+          "sha256": "e4dc7c43e04363dab7a5e7fd18e4751c1ed1296b453d085b2c8c7646d1a7393c",
+          "name": "mods/mixin-probe-0.1.0-p1.jar"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,473 @@
+{
+  "note": "Final P1 implementation inputs. Production archives were frozen before the comparison/rebuild; code sources are the same. Evidence and documentation excluded.",
+  "files": [
+    {
+      "path": "build.gradle",
+      "sha256": "6469af9cb03b8c8d680c2dbe0f3b61e495eb9c304d8274b920284d548f9a63b9"
+    },
+    {
+      "path": "gradle.properties",
+      "sha256": "c274140c4dc23b99c38f99b3dc107c63a468389ea890a1fa0096fba50f50d1de"
+    },
+    {
+      "path": "gradle/p1-inputs.lock.json",
+      "sha256": "25946255f266ec3fca514f3aa8ef6ebd84dcc15038993cc4709368dfebfeacb8"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "33ad4583fd7ee156f533778736fa1b4940bd83b433934d1cc4e9f608e99a6a89"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "090143f692ca28fdc433de6dc10c738eb0e98d4891d9ccced38726c99e5d1824"
+    },
+    {
+      "path": "gradlew",
+      "sha256": "54ef8934af33b5e49c3979112f4714ed5b51d5b7380a070eb9b5643fad1b6467"
+    },
+    {
+      "path": "gradlew.bat",
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "path": "plugin/build.gradle",
+      "sha256": "f6b7a80c416848a9779946ee5eeb1e99bd1fd9be318e36dd97caeae36c412716"
+    },
+    {
+      "path": "plugin/gradle.properties",
+      "sha256": "208ae5213559726048502e48d5b168d9191c6dc7525a18da420b9cfcd3b5914c"
+    },
+    {
+      "path": "plugin/settings.gradle",
+      "sha256": "a2f3c3d9375fae3cbe51633c74a3abda5081f771e5a2dbfc6ba79d7abe0bda7a"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/Constants.java",
+      "sha256": "b4c0543b900b1507a37f7d5da4764ec53c23593f46edfbea7815f4414a06089d"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/ForgeCapabilities.java",
+      "sha256": "cdf2184fca6a33b71593a77b3c671ecfb844859c74ce8851ed690dbe8b24cb45"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/LoomGradleExtension.java",
+      "sha256": "6bd703ad86570a68a307a414106364833584f99f88060217e9d6c33985477ea4"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/LoomGradlePlugin.java",
+      "sha256": "64eaac63467f3cc9e8ab77b052b056549b0de20341c9144617601dc72f7101df"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/Binpatch.java",
+      "sha256": "e165ea8d7a11b3cfcf3dd100d319186a5af2a9089f6642b65a5807615fa83e48"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/DescriptorMapper.java",
+      "sha256": "bf88781b3fce81267af60f5e980e81f5ff6d1eaa2a17d114617cf84654a3f6a5"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/ForgeAccessTransformerSet.java",
+      "sha256": "e0666c08f040175e205b77867a13957100b354349b157ec56f38c1c0e99596d2"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/JarScanData.java",
+      "sha256": "b65da9a5b7a1a9f5beb2e1705b4c4ce515a84109b4884a81382bba48d170a004"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/ImportBaseZipLayer.java",
+      "sha256": "8ceea6ded2dc204bb18c91e1bc12b08376cef27ef53ee21d2793b10f866a710f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/ImportClassesLayer.java",
+      "sha256": "deedbc188558180c587466ca5e7d13547114673d0e8d0ad109954f3f79a232f8"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/ImportFieldsMethodsLayer.java",
+      "sha256": "c56de3cda7a897c9ef8a0fb204173912d3976bf7fd5d715a4cd648765cf6cc32"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/Layer.java",
+      "sha256": "dbabfb39a1311a3e16fc71777043fd79201130a3b6883a719c294c97ffd46ab5"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/LayeredMcpMappings.java",
+      "sha256": "7256651b0d72c676b7c8733ac6a91c9e62b91b8c9a2483f2709783974107d90f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/ModifyLayer.java",
+      "sha256": "bc4cac464dc15e0e93a3adf0c92555bfdb1fdf49a75320f92aafac098a38055f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/layer/RemoveClassesLayer.java",
+      "sha256": "2f25b07177ef448189ade7b91b9fa9a2be82a5a407095baacfc7d3000e49e096"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/MappingScanner.java",
+      "sha256": "da6d0d3706e4b055f27bc20bb9697c6cbbfa09b0b215b45368d05bc45c94014c"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/McpMappings.java",
+      "sha256": "2df0fada6bb2b65c8f80a0cb88ae96486727c9b5a78ff43350dc501242c38a4c"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/McpMappingsBuilder.java",
+      "sha256": "7e75e3f6fe2ec6db7ed9677b69ebfe6e250442dc1892ed2b092b67461a67117a"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/Members.java",
+      "sha256": "2dda7173c469133648be15309d7db1ac3ef6f3f0c7cab988c4e4ced10d63511f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/NaiveAsmSrgRenamer.java",
+      "sha256": "f4978bf48034f7372ee51fba72b0d5676f2b1f44656fbdb5dc198faec0374957"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/NaiveTextualSrgRenamer.java",
+      "sha256": "d16c6482e85ad83d3e0cf46667c5a06160b92a1f9b39a1d21776131c97fc3ecf"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/Packages.java",
+      "sha256": "bb219ea991b7c48ea02f7073bd4eb8b5a1860cc5c7b7baafb66bce36ed889ec9"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/mcp/Srg.java",
+      "sha256": "1dc6270b833fec7a594c656577cf3b7d32eafd6861ca3e2dcc7b5dca9bd5ba97"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/AccessTransformer.java",
+      "sha256": "25c838678f8c676ef5fe16b775d4ff73b5df9677a6f83b3249ff70fa99128e05"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/AssetDownloader.java",
+      "sha256": "3901cc2a22d240b6e792e3cf3339e6f0c8459755d8bf6264f4fbf0d81dd0fbef"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/Binpatcher.java",
+      "sha256": "dcca1f4652f0c141c802f805b595caaafe96bad36b86911f255dcb471634d8a9"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/ConfigElementWrapper.java",
+      "sha256": "357468edb8ab670b491f308989a597aefe82b3bbc137156bb21bf3a5619e0184"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/DependencyRemapperMcp.java",
+      "sha256": "dc0ea5848df1adaa30eabc12ff8776e4ae2526fedc5c70a64f987d466c066052"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/ForgeDependencyFetcher.java",
+      "sha256": "74f10dfc753933b704ce036a7875085d0489b7e06eb8900bcdeb265e9d884244"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/Jarmodder.java",
+      "sha256": "160c2764ad8a5b0ec8c507a9bdf68a08125b9b5ee5b3f3c3d4cfd0a089c446dc"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/MappingsWrapper.java",
+      "sha256": "a3da68d112d691ea22cb38d23bf88bff2c2e6713ec2e53f44fff04219e7c6788"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/Merger.java",
+      "sha256": "0f484f6481b75f3d02ca4a51503e65fe7e9d43ffe829e81a2d14d5f37e757e11"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/NaiveRenamer.java",
+      "sha256": "9b8ce397422085d56cb7c078c312862c39f687c2203ad8db959eb36cf47d1e17"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/NewProvider.java",
+      "sha256": "38cfbfd407f5a0230c88d4abf678311c6920260a28b590bbe3cabf9bd68f4337"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/RemapperMcp.java",
+      "sha256": "6d6121eefeebddf844b104b87c4720c54aa8e1efd7d45174173be3294d137b9c"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/ResolvedConfigElementWrapper.java",
+      "sha256": "8b9571d4c51f6fa7e117ca79ee707982a2ca968981ea71c8eddca999f3d271a9"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/VanillaDependencyFetcher.java",
+      "sha256": "5ccade5a11dc4dd1a6ce983c5ef28d306654b95cc30683ac617b840596e8010f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/newprovider/VanillaJarFetcher.java",
+      "sha256": "c39d588affecbd9b74a330f9008431e34bdb3edec29172992f89173f50a68be7"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/ProviderGraph.java",
+      "sha256": "62067550adebdd2d073cdec66021642198f462ece9767888883baf5feda024c4"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/RemappedConfigurationEntry.java",
+      "sha256": "55c769035b312ccbc6bda26072c140170706138bb9e987b34112c2ffebde5d4d"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/RunConfig.java",
+      "sha256": "119c96b7bed826b1756aae88e6307d18f9f958b469b5cacf4be6c4e7d009b44d"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/ConfigurationDebugTask.java",
+      "sha256": "ce024da1687e2516c63341908dd37212e467f7222883a5e2ffff1908fb4ce3e6"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/fernflower/ForkedFFExecutor.java",
+      "sha256": "c812cd5f3358ccedda1cb050ffa67d7e21e9527e1f0a8372c0a3dd4991c5cd6e"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/fernflower/McpJavadocProvider.java",
+      "sha256": "55e13ed29f29b376e468bf358f0259126384ae42beb897d748c6d798b7284a10"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/fernflower/ThreadSafeResultSaver.java",
+      "sha256": "249d219cb8bc7ee5b6637076b2699b1385bbb1fb0e5de9d88eeabb715b58459a"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/GenSourcesTask.java",
+      "sha256": "4c5637bab613825f6a0d61b71eb7f94ccfe2a01a51df57491ffe2aee3240b670"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/RemappedConfigEntryFolderCopyTask.java",
+      "sha256": "14ca503fd008c913cf95efd8541d24cc5d0aec1c1044a6f766a6b1caeb4989e2"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/ReobfJarTask.java",
+      "sha256": "cdeb49085c796b019c54e0ca1d6720c647cc10894cbf2cd75b28d4ed9f9c8185"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/runs/GenEclipseRunsTask.java",
+      "sha256": "59eb3b659ab8839c03b6214e70215b81c8882050915756b948504f1a6b6071f2"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/runs/GenIdeaProjectTask.java",
+      "sha256": "478600d6b5fb000a34396a9b8115215c284e5a74f6c235c68adf861fb2883f90"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/runs/GenIdeaRunConfigsTask.java",
+      "sha256": "8688ed188e7578bb8ab0e3d1e8dd2221936661c61b5bb9caeb16b74d379bef4e"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/runs/GenVsCodeProjectTask.java",
+      "sha256": "080645ae782038ac5b67a779e69de0aadf4160a6d2509ce442e911f8db7ae290"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/RunTask.java",
+      "sha256": "1ac92a0e06b00de26d1b9fd6bb152f285ff61e1b3cbae7e9d3e0ee6917199f5f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/ShimForgeLibrariesTask.java",
+      "sha256": "39b6675c5d7a89af57bc239e378f9163a75f3fdd3469ac9c5f398484861ac4de"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/task/ShimResourcesTask.java",
+      "sha256": "5c7ba4cb64196ba22b76580275f04d72d023404e0a5086d63aa6d30954001a7f"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/Check.java",
+      "sha256": "f34bf7eccd766745312ec055bb4ca6087d824a2c86090c1ce464bfada89e055e"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/Checksum.java",
+      "sha256": "46c62c7fdd6a8b7125b8409fde61ef5d6f8ce1ca420eb5bab33d830f3522bb37"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/DownloadSession.java",
+      "sha256": "4ced8f221248303e6fd8287f7215e0d16089ccf4c5e456f4c2b07757b595848d"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/Gdiff.java",
+      "sha256": "99d1ecb142d0f3946e17cbb6d60a459900e58e971903ee4ac9cad27a995b3b7a"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/GradleSupport.java",
+      "sha256": "35838c84f1ab854eec1c6f3c72c8abbb35022a1d999a261562889b71844a0212"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/GroovyXmlUtil.java",
+      "sha256": "fd63f7f0c39fbe5f718029a452c05257ca39c35c650cecbb4ccafd090a647113"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/LineNumberRemapper.java",
+      "sha256": "e333c120fdc7aaf20b2fbe51fc6e348669eb0e63a66db124e7b43b57e92764f3"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/LoomTaskExt.java",
+      "sha256": "f17bfc86eaf7955f8e0c18a9bc23ada48939704e162f1e6e385e0d96c5276616"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/ManifestIndex.java",
+      "sha256": "be66fcddc43a8f6135b9df17d68310bbe4af32bf3f4770ca77af3b078f99919d"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/OperatingSystem.java",
+      "sha256": "a1399f3807c1b28c88367de548c352530cc8b20c043cb416987b17af0a552d43"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/Props.java",
+      "sha256": "b75cb4847e030ee65a740162a85262b1ff714c5225e877fc48d4c3e8b0a3966b"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/StringInterner.java",
+      "sha256": "abb9c003969c9184f59fe1ee165567832af741f78b30f162a432a7f95ee4d365"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/Suppliers.java",
+      "sha256": "519ce3e46c802ef86a952b50f6e47f85679898723d6a3137ef23f0836b4a6236"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/VersionManifest.java",
+      "sha256": "aa8606af1dd3e28aed62febb5d019681e94c676462d7d8851647a9fde9169438"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/util/ZipUtil.java",
+      "sha256": "97cc0ef6ea3161097f1df3db79c7a509446e5072d29c11bac18c70d72832c41c"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/WellKnownLocations.java",
+      "sha256": "2b6bba9627e6973d0ecd7473671f22aa06161984d06988b9f49a819901bac5bd"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/SevenZip/Compression/LZ/OutWindow.java",
+      "sha256": "a14ce2257178716107981b71e8e3f499648b05adef81f070f77d2d153431417c"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/SevenZip/Compression/LZMA/Base.java",
+      "sha256": "74cbb2ab7eb498f13d56326c2c02fc2a22de7cef1b7edbcb33bf06520d849f25"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/SevenZip/Compression/LZMA/Decoder.java",
+      "sha256": "60972c3e0fbe8741bab23c56df5b8a2d95c644138f1581dc4e005a9e86235940"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/SevenZip/Compression/RangeCoder/BitTreeDecoder.java",
+      "sha256": "d514ab3656125b3f12ef7992710fd090b59e929fa267c15c158c8e25e407dbf8"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/SevenZip/Compression/RangeCoder/Decoder.java",
+      "sha256": "2ebb60d727e0aa01e912625b7cd258ae76f6473f8816cd17ba3d5cc319f71e35"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/stitch/ClassMergerCooler.java",
+      "sha256": "73067204308185b94dc8f08897de2b47a9fde2f827f6defcf929d1da1354c59a"
+    },
+    {
+      "path": "plugin/src/main/java/net/fabricmc/loom/yoinked/stitch/JarMergerCooler.java",
+      "sha256": "580028b636d514a4f383e35e21e1d0c41f9eb1ef8f24aa75904cd770a8d1164d"
+    },
+    {
+      "path": "plugin/src/main/resources/eclipse_run_config_template.xml",
+      "sha256": "5edb80cba1eec5a1f9589b9e17699e013af70d25ddcb5c67d21d438baffe71a9"
+    },
+    {
+      "path": "plugin/src/main/resources/idea_run_config_template.xml",
+      "sha256": "a63d4a1796514ed1d441ac69e9e0498a6dea55d0927bcc372c56cf720f55be87"
+    },
+    {
+      "path": "plugin/src/main/resources/LZMA_SDK_LICENSE.txt",
+      "sha256": "6b2e7e2c4f145aa293dc29075900e6cbfb6e6c457099461f4e9037a953313728"
+    },
+    {
+      "path": "plugin/src/main/resources/STITCH_REDISTRIBUTION_NOTICE.txt",
+      "sha256": "5eab06ead69d370eea1e4e3d30693793a703cb015c01964763230fd7455ed230"
+    },
+    {
+      "path": "plugin/src/test/java/net/fabricmc/loom/yoinked/stitch/ClassMergerCoolerTest.java",
+      "sha256": "0ea77fa5119a5de88e963653f8ff2940920503ed2639bebb1d915bc9baa4ea65"
+    },
+    {
+      "path": "runtime/mixin-bootstrap/build.gradle",
+      "sha256": "2577b33eff2cccdbdeb3040d1cd646a13d0f64cb405e92433d60f0dc0da695b0"
+    },
+    {
+      "path": "runtime/mixin-bootstrap/src/main/java/dev/desiderium/bootstrap/DesideriumTweaker.java",
+      "sha256": "ecec63d70ccf05137340afc8f799e80140c5ff02e745b44a5d30df58becdeeea"
+    },
+    {
+      "path": "runtime/mixin-bootstrap/src/main/java/org/spongepowered/asm/bridge/RemapperAdapterFML.java",
+      "sha256": "f4fd9856c70011d87ce7f366886b01d6799dbf016f437b475b6057862c27ad44"
+    },
+    {
+      "path": "runtime/mixin-bootstrap/src/main/resources/META-INF/LICENSE-Mixin.txt",
+      "sha256": "8f71659370c5268d9a1dc962a46232540e8fca63462586d8efaa95aab492a208"
+    },
+    {
+      "path": "samples/baseline/build.gradle",
+      "sha256": "b418d354e1249b2eaef16d14eae0d3c8d693dea0572b92c7a40e1fd0c6730275"
+    },
+    {
+      "path": "samples/baseline/src/main/java/dev/desiderium/baseline/BaselineMod.java",
+      "sha256": "4f0d56d2793e6571fa0cbc3228e51ae9ac1c563210ddbe8f28a3111d45e3262d"
+    },
+    {
+      "path": "samples/baseline/src/main/resources/mcmod.info",
+      "sha256": "199b281dbe87ebd30584bcdea0cd513fa659b7f3f7e8858df36ed812cf8ba034"
+    },
+    {
+      "path": "samples/mixin-probe/build.gradle",
+      "sha256": "cb73e9657dba8466426bb56a768d97712000ef0c4e4b38399d0be21af489ca8a"
+    },
+    {
+      "path": "samples/mixin-probe/src/main/java/dev/desiderium/probe/mixin/ClientProbe.java",
+      "sha256": "5b92adbbed98a1dfaa097cdbc2938ea8927ca7d392a13dceefdc35aa5ca1198a"
+    },
+    {
+      "path": "samples/mixin-probe/src/main/java/dev/desiderium/probe/mixin/CommonProbe.java",
+      "sha256": "8a4a55823632345ace60d304346f41611bb1effecd1df8f46cc25a15ac530ba3"
+    },
+    {
+      "path": "samples/mixin-probe/src/main/java/dev/desiderium/probe/ProbeMod.java",
+      "sha256": "86073997a9f96eba8fb7fad0a072f98e2d824be32393904e070d718ee265d9ca"
+    },
+    {
+      "path": "samples/mixin-probe/src/main/resources/mixins.desiderium.p1.json",
+      "sha256": "8892f8c4b4f84c374434f12f5db05994264e49a31bb5ba26dd1a72e78c5a7bf0"
+    },
+    {
+      "path": "samples/mixin-probe/src/main/resources/pack.mcmeta",
+      "sha256": "d86601c98da8a6c97274569eea6afb8a741468ad84257fa898d435a19e1c25c1"
+    },
+    {
+      "path": "scripts/Install-P0Forge.ps1",
+      "sha256": "e55c33f318134df232531865670d11e717674fa5370c253a1b1bcd3fda5748f1"
+    },
+    {
+      "path": "scripts/Invoke-P0.ps1",
+      "sha256": "3bf6354fca1f989998624169f76ea7a897d6d6acd8220671b4e728a7b2f60316"
+    },
+    {
+      "path": "scripts/Prepare-P0Client.ps1",
+      "sha256": "887c0dde6c9cc8731a9482d3e1b841d335d930ff85ba592f6224c5efcfab58fd"
+    },
+    {
+      "path": "scripts/Prepare-P1Production.ps1",
+      "sha256": "483c913ad529c69339b23924634cd78370af4a89988b76f2987846e88bc43040"
+    },
+    {
+      "path": "scripts/Start-P0Client.ps1",
+      "sha256": "d7853fefaf71c7d9860d3794d7b669dda1763748cf82be7a6b1c916721c56132"
+    },
+    {
+      "path": "scripts/Start-P1Production.ps1",
+      "sha256": "5831749ee77200c8d2b955d252d51a0d2ad54b3e66c0fde41c168f3430c342a0"
+    },
+    {
+      "path": "scripts/Test-P0Inputs.ps1",
+      "sha256": "c3c32b34dedf9807ad92f9a1a0b2f2654d968b5810e46d9650b9ac7ea445b831"
+    },
+    {
+      "path": "scripts/Test-P0Runtime.ps1",
+      "sha256": "5826168aea5d4f22a21e2578413d64f3090f76d1306ca1772cce686bcb41e289"
+    },
+    {
+      "path": "scripts/Test-P1Artifacts.ps1",
+      "sha256": "708aad8f98aff656d8a3d7e99fd6506654c18d640f24c01c34580f21367cd11f"
+    },
+    {
+      "path": "scripts/Test-P1Runtime.ps1",
+      "sha256": "309d5e780e79ea9071eb28424aa32670f72691cf70a919c06b37b86beafbe244"
+    },
+    {
+      "path": "settings.gradle",
+      "sha256": "5f0621eddcde75ac4539efcc26b6b0759f5d7b9c04322b8395fc7651c683145d"
+    }
+  ]
+}
